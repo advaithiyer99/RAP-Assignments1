@@ -17,4 +17,5 @@ public class Simulator {
 		Dog myOtherDog = new Dog("Sam", 100.00);
 		Dog myThirdDog = new Dog("Rover", 50.00);
 	}
+	
 }

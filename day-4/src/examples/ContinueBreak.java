@@ -9,11 +9,10 @@ public class ContinueBreak {
 			System.out.println("in loop");
 			
 			myInt++;
-			
 			if (myInt != 8) {
 				System.out.println(myInt);
 				continue;
-			}
+				}
 			
 			System.out.println("before break");
 			if (myInt == 8) {
