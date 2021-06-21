@@ -13,14 +13,20 @@ public class Simulator {
 		Animal anim2 = new Shark("Sharky");
 //		((Bear)anim2).hibernate(); // we can downcast but we need to be careful
 		
-		if (anim instanceof Bear) {
-			((Bear) anim).hibernate();
-		}
+//		if (anim instanceof Bear) {
+//			((Bear) anim).hibernate();
+//		}
+//		
+//		if (anim2 instanceof Bear) {
+//			((Bear) anim).hibernate();
+//		} else {
+//			System.out.println("object is an animal BUT not a bear!");
+//		}
 		
-		if (anim2 instanceof Bear) {
-			((Bear) anim).hibernate();
-		} else {
-			System.out.println("object is an animal BUT not a bear!");
+		try {
+			((Bear) anim2).hibernate();
+		} catch(Exception ex) {
+			ex.printStackTrace();
 		}
 		
 		Animal[] animalArray = new Animal[4];
@@ -30,8 +36,8 @@ public class Simulator {
 		animalArray[2] = new Platypus("Platty");
 		animalArray[3] = new Capybara("Cappy");
 		
-		for (Animal animal : animalArray) {
-			animal.eat();
-		}
+//		for (Animal animal : animalArray) {
+//			animal.eat();
+//		}
 	}
 }
