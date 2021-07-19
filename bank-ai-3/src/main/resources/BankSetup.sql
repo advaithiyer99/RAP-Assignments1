@@ -1,5 +1,6 @@
 drop table if exists customer cascade;
 drop table if exists account cascade;
+drop table if exists transactions cascade;
 
 create table customer (
 	username varchar primary key not null,
@@ -17,5 +18,12 @@ create table account (
 	status varchar not null
 );
 
+create table transactions (
+	username varchar primary key not null references account(username),
+	deposit int,
+	withdrawn int
+);
+
 select * from customer;
 select * from account;
+select * from transactions;

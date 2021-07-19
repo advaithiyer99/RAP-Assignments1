@@ -1,16 +1,18 @@
-package models;
+package com.revature.models;
 
-import java.util.Scanner;
+public class Customer extends User {
 
-public class Simulator {
-	
 	private String name;
 	private String gender;
 	private int age;
 	
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in); 
+	public Customer(String username, String PIN) {
+		super(username, PIN);
+		this.setName(name);
+		this.setGender(gender);
+		this.setAge(age);
 	}
+	
 	
 	public String getName() {
 		return name;
