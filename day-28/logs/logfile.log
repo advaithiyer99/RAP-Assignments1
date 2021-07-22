@@ -1,0 +1,36 @@
+2021-07-20 11:52:03  TRACE com.revature.App:13 This is my trace message.
+2021-07-20 11:52:03  DEBUG com.revature.App:14 This is my debug message.
+2021-07-20 11:52:03  INFO com.revature.App:15 This is my info message.
+2021-07-20 11:52:03  WARN com.revature.App:16 This is my warn message.
+2021-07-20 11:52:03  ERROR com.revature.App:17 This is my error message.
+2021-07-20 11:52:03  FATAL com.revature.App:18 This is my fatal message.
+2021-07-20 11:52:03  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-20 11:54:50  TRACE com.revature.App:13 This is my trace message.
+2021-07-20 11:54:50  DEBUG com.revature.App:14 This is my debug message.
+2021-07-20 11:54:50  INFO com.revature.App:15 This is my info message.
+2021-07-20 11:54:50  WARN com.revature.App:16 This is my warn message.
+2021-07-20 11:54:50  ERROR com.revature.App:17 This is my error message.
+2021-07-20 11:54:50  FATAL com.revature.App:18 This is my fatal message.
+2021-07-20 11:54:50  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-20 11:57:17  TRACE com.revature.App:13 This is my trace message.
+2021-07-20 11:57:17  DEBUG com.revature.App:14 This is my debug message.
+2021-07-20 11:57:17  INFO com.revature.App:15 This is my info message.
+2021-07-20 11:57:17  WARN com.revature.App:16 This is my warn message.
+2021-07-20 11:57:17  ERROR com.revature.App:17 This is my error message.
+2021-07-20 11:57:17  FATAL com.revature.App:18 This is my fatal message.
+2021-07-20 11:57:17  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-20 12:03:57  TRACE com.revature.App:13 This is my trace message.
+2021-07-20 12:03:57  DEBUG com.revature.App:14 This is my debug message.
+2021-07-20 12:03:57  INFO com.revature.App:15 This is my info message.
+2021-07-20 12:03:57  WARN com.revature.App:16 This is my warn message.
+2021-07-20 12:03:57  ERROR com.revature.App:17 This is my error message.
+2021-07-20 12:03:57  FATAL com.revature.App:18 This is my fatal message.
+2021-07-20 12:03:57  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-20 12:04:18  TRACE com.revature.App:22 After calling Controller.init()
+2021-07-20 12:06:10  TRACE com.revature.App:13 This is my trace message.
+2021-07-20 12:06:10  DEBUG com.revature.App:14 This is my debug message.
+2021-07-20 12:06:10  INFO com.revature.App:15 This is my info message.
+2021-07-20 12:06:10  WARN com.revature.App:16 This is my warn message.
+2021-07-20 12:06:10  ERROR com.revature.App:17 This is my error message.
+2021-07-20 12:06:10  FATAL com.revature.App:18 This is my fatal message.
+2021-07-20 12:06:10  TRACE com.revature.App:20 Before calling Controller.init()
