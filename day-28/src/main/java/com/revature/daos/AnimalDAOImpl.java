@@ -49,7 +49,7 @@ public class AnimalDAOImpl implements AnimalDAO {
 
 	@Override
 	public Animal getAnimal(String text) {
-Animal animal = null;
+		Animal animal = null;
 		
 		try {
 			connection = DAOUtility.getConnection();
@@ -123,7 +123,7 @@ Animal animal = null;
 
 	@Override
 	public List<Animal> getAnimalsOfUser(String username) {
-List<Animal> animals = new ArrayList<>();
+		List<Animal> animals = new ArrayList<>();
 		
 		try {
 			connection = DAOUtility.getConnection();

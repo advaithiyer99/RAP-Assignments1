@@ -6,7 +6,7 @@ public class Customer extends User {
 	private String gender;
 	private int age;
 	
-	public Customer(String username, String PIN) {
+	public Customer(String username, String PIN, String name) {
 		super(username, PIN);
 		this.setName(name);
 		this.setGender(gender);
@@ -36,6 +36,14 @@ public class Customer extends User {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(BankAccount account, String username) {
+		this.username = username;
 	}
 
 }

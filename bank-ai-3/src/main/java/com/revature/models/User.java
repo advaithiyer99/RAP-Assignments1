@@ -2,7 +2,7 @@ package com.revature.models;
 
 public abstract class User {
 
-	private String username;
+	protected String username;
 	private String PIN;
 	
 	public User (String username, String PIN) {

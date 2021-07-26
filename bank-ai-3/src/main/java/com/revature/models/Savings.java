@@ -2,14 +2,36 @@ package com.revature.models;
 
 public class Savings extends BankAccount {
 	
-	public Savings (String account_Type, int account_Number, String account_Status, double starting_Balance, double deposit, double withdraw, double transaction, double account_Balance) {
-		this.setAccount_Type("Savings");
-		this.setAccount_Number(account_Number);
-		this.setAccount_Status(account_Status);
-		this.setStarting_Balance(starting_Balance);
+	public Savings (String accountType, int accountNumber, String accountStatus, double startingBalance, double deposit, double withdraw, double transaction, double accountBalance) {
+		this.setAccountType("Savings");
+		this.setAccountNumber(accountNumber);
+		this.setAccountStatus(accountStatus);
+		this.setStartingBalance(startingBalance);
 		this.setDeposit(deposit);
 		this.setWithdraw(withdraw);
-		this.setTransaction(this.getAccount_Type(), deposit, withdraw);
-		this.setAccount_Balance(account_Balance, deposit, withdraw);
+		this.setTransaction(this.getAccountType(), deposit, withdraw);
+		this.setAccountBalance(accountBalance, deposit, withdraw);
+	}
+
+	public Savings(int accountNumber, double accountBalance, String accountStatus) {
+		this.setAccountNumber(accountNumber);
+		this.setAccountBalance(accountBalance, deposit, withdraw);
+		this.setAccountStatus(accountStatus);
+	}
+
+	@Override
+	public void setTransaction(String accountType, double deposit, double withdraw) {
+		if (deposit > 0 && withdraw == 0) {
+			System.out.println(deposit);
+			System.out.println("You have deposited " + deposit + " dollars into your savings account!");
+		} else if (withdraw < accountBalance && withdraw > 0 && deposit == 0) {
+			System.out.println(withdraw);
+			System.out.println("You have withdrawn " + withdraw + " dollars from your savings account!");
+		} else if (withdraw >= accountBalance) {
+			System.out.println("This transaction is invalid!");
+			this.setWithdraw(withdraw);
+		} else {
+			System.out.println("You have completed your transaction! Have a nice day!");
+		}
 	}
 }
