@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import com.revature.models.User;
+
 import com.revature.models.BankAccount;
 import com.revature.models.Customer;
 
@@ -13,8 +14,9 @@ public class UserReposImpl implements UserRepos {
 	public User getUser(String username) {
 		try {
 			Customer user = (Customer) userDao.getUser(username);
-			BankAccount account = bankaccountDao.getAccountsofUser(username);
-			user.setUsername(account, username);
+			BankAccount account = (BankAccount) bankaccountDao.getAccount(username);
+			user.setUsername(username);
+			account.getAccountNumber();
 			return user;
 		} catch(ClassCastException ex) {
 			System.out.println("Error: user not a customer.");

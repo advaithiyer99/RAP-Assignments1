@@ -1,13 +1,18 @@
 package examples.creation;
 
-public class AnotherThread {
+public class AnotherThread implements Runnable {
 
-		private final int numberofThread;
-		
-		@Override
-		public void run() {
-			for (int = 0; i < 10; i++) {
-				System.out.println("Thread: " + ", " + : " " + i);
-			}
+	private final int numberOfThread;
+	
+	public AnotherThread(int i) {
+		this.numberOfThread = i;
+	}
+	
+	@Override
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Thread " + this.numberOfThread + ": "+ i);
 		}
+	}
+
 }

@@ -2,7 +2,7 @@ package com.revature.models;
 
 public abstract class BankAccount {
 
-	private int accountNumber;
+	protected int accountNumber;
 	private double startingBalance;
 	protected double accountBalance;
 	private String accountType;

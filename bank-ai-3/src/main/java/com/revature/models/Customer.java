@@ -42,7 +42,7 @@ public class Customer extends User {
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(BankAccount account, String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 

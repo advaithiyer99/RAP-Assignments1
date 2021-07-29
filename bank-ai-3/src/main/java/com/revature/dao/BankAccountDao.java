@@ -8,7 +8,7 @@ public interface BankAccountDao {
 	
 	public boolean addAccount(BankAccount account);
 	
-	public BankAccount getAccount(String text);
+	public BankAccount getAccount(String username);
 	
 	public List<BankAccount> getAllAccounts();
 	

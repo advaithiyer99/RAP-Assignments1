@@ -39,14 +39,14 @@ public class BankAccountDaoImpl implements BankAccountDao {
 	}
 
 	@Override
-	public BankAccount getAccount(String text) {
+	public BankAccount getAccount(String username) {
 		BankAccount account = null;
 		
 		try {
 			connection = DAOUtility.getConnection();
 			String sql = "select * from account where account_id = ?;";
 			statement = connection.prepareStatement(sql);
-			statement.setString(1, text);
+			statement.setString(1, username);
 			ResultSet rs = statement.executeQuery();
 			
 			while (rs.next()) {
