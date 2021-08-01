@@ -84,7 +84,7 @@ public class Simulator {
 					}
 					LOG.debug(String.format("isEmployee: %b", isEmployee));
 				}
-				LOG.trace("isEmployee loop has finished");
+				
 			} 
 			// if user is a customer
 			else if (user != null && user instanceof Customer) {
@@ -116,7 +116,7 @@ public class Simulator {
 					default: System.out.println("Invalid. Please enter a number between 1 and 7.");
 							break;
 					}
-					LOG.debug(String.format("isCustomer: %b", isCustomer));
+			
 				}
 				LOG.trace("isCustomer loop has finished");
 			}

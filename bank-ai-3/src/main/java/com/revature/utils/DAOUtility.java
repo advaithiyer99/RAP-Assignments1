@@ -12,11 +12,7 @@ public class DAOUtility {
 	private static String CONNECTION_PASSWORD;
 	private static String CONNECTION_URL;
 	private static Connection connection;
-	
-	// static initialization block: 
-		// need to be outside of methods, inside of class
-		// code executed only once (whenever class is loaded into memory)
-		// why are we using it? to initialize our static properties once we finally get to our sensitive data
+
 	static {
 		try {
 			// get reference to properties file
