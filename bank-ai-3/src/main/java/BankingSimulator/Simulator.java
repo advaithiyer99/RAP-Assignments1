@@ -64,18 +64,26 @@ public class Simulator {
 					int option2 = displayEmployeeMenu();
 					
 					switch(option2) {
-					case 1: System.out.println(bankaccountDAO.getAccountsofUser("Joe Smith").getAccountBalance());
+					case 1: // View customer balance
+							System.out.println(bankaccountDAO.getAccountsofUser("user1").getAccountBalance());
 							break;
-					case 2: System.out.println(bankaccountDAO.addAccount(null));
+					case 2: // Approve account
+							System.out.println(userRepos.getUser("user1"));
+							System.out.println(bankaccountDAO.addAccount(null));
 							break;
-					case 3: System.out.println(bankaccountDAO.removeAccount(null));
+					case 3: // Reject Account
+							System.out.println(userRepos.getUser("user1"));
+							System.out.println(bankaccountDAO.removeAccount(null));
 							break;
-					case 4: System.out.println(); 
+					case 4: // View transaction log
+							System.out.println(); 
 							break;
-					case 5: user = null;
+					case 5: // Log Out
+							user = null;
 							isEmployee = false;
 							break;
-					case 6: isEmployee = false;
+					case 6: // Quit
+							isEmployee = false;
 							appIsRunning = false;
 							displayGoodbyeScreen();
 							break;
@@ -96,22 +104,30 @@ public class Simulator {
 					int option2 = displayCustomerMenu();
 					
 					switch(option2) {
-					case 1: System.out.println(bankaccountDAO.getAccountsofUser("Joe Smith"));
+					case 1: // View Accounts
+							System.out.println(bankaccountDAO.getAccountsofUser("user1"));
 							break;
-					case 2: System.out.println(bankaccountDAO.addAccount(null));
+					case 2: // Apply for New Account
+							System.out.println(bankaccountDAO.getAccountsofUser("user1"));
+							System.out.println(bankaccountDAO.addAccount(null));
 							break;
-					case 3: bankaccountDAO.getAccount("Joe Smith").setDeposit(100.2);
-							bankaccountDAO.getAccount("Joe Smith").getDeposit();
+					case 3: // Make Deposit
+							bankaccountDAO.getAccount("user1").setDeposit(100.20);
+							bankaccountDAO.getAccount("user1").getDeposit();
 							break;
-					case 4: bankaccountDAO.getAccount("Joe Smith").setWithdraw(200.2);
-							bankaccountDAO.getAccount("Joe Smith").getWithdraw();
+					case 4: // Make Withdrawal
+							bankaccountDAO.getAccount("user1").setWithdraw(200.20);
+							bankaccountDAO.getAccount("user1").getWithdraw();
 							break;
-					case 5: System.out.println();
+					case 5: // Transfer Money
+							System.out.println(bankaccountDAO.getAccountsofUser("user1"));;
 							break;
-					case 6: user = null;
+					case 6: // Log Out
+							user = null;
 							isCustomer = false;
 							break;
-					case 7: isCustomer = false;
+					case 7: // Quit 
+							isCustomer = false;
 							appIsRunning = false;
 							displayGoodbyeScreen();
 							break;

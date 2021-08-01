@@ -131,7 +131,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 			}
 			
 		} catch(SQLException ex) {
-			System.out.println("Error: Failed to obtain user of account.");
+			System.out.println("Error: Failed to obtain accounts of user.");
 			ex.printStackTrace();
 		} finally {
 			closeResources();
