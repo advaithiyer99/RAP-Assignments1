@@ -82,8 +82,10 @@ public class Simulator {
 					default: System.out.println("Input invalid. Please enter a number between 1 and 6.");
 							break;
 					}
-					LOG.debug(String.format("isEmployee: %b", isEmployee));
+					
 				}
+				
+				LOG.trace("isEmployee loop has finished");
 				
 			} 
 			// if user is a customer
