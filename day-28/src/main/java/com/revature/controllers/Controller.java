@@ -23,7 +23,12 @@ public class Controller {
 	// flag to keep track of whether or not user wants to keep using app
 	public static boolean isRunning = true;
 	
+	
+	
 	public static void init() {
+		LOG.trace("Controller.init() method called.");
+		LOG.debug(String.format("User is: %s and isRunning is: %b", user != null ? user.getClass() : null, isRunning));
+		
 		// while the app is running...
 		while (isRunning) {
 			// ask user for choice #1: login, register, or quit
@@ -31,12 +36,13 @@ public class Controller {
 			
 			switch (choice1) {
 				case 1: // call login service layer function
-						// temporary hard-coded users to login with:
-						user = new Customer("user1", "pass", "Geoffrey Webber", 100);
-//						user = new Employee("employee1", "pass");
-						
+						// temporary hard-coding
+						user = new Employee("employee1", "pass");
+						LOG.info("Emplyee logged in.");
 						break;
 				case 2: // call register service layer function
+						// temporary hard-coding
+						user = new Customer("user1", "pass", "Geoffrey Webber", 100);
 						break;
 				case 3: isRunning = false;
 						displayGoodbyeMessage();
@@ -45,10 +51,12 @@ public class Controller {
 						break;
 			}
 			
+			LOG.debug(String.format("User is: %s and isRunning is: %b", user != null ? user.getClass() : null, isRunning));
 			// if user is an employee, have them make choice #2
 			if (user != null && user instanceof Employee) {
 				boolean isEmployee = true;
 				while (isEmployee) {
+					LOG.trace("Inside isEmployee loop");
 					int choice2 = displayEmployeeMenu();
 					
 					switch(choice2) {
@@ -70,13 +78,15 @@ public class Controller {
 					default: System.out.println("Sorry, please enter a number from 1-3.");
 							break;
 					}
+					LOG.debug(String.format("isEmployee: %b", isEmployee));
 				}
-				
+				LOG.trace("Outside isEmployee loop");
 			} 
 			// if user is a customer
 			else if (user != null && user instanceof Customer) {
 				boolean isCustomer = true;
 				while (isCustomer) {
+					LOG.trace("Inside isCustomer loop");
 					int choice2 = displayCustomerMenu();
 					
 					switch(choice2) {
@@ -98,19 +108,26 @@ public class Controller {
 					default: System.out.println("Sorry, please enter a number from 1-3.");
 							break;
 					}
+					LOG.debug(String.format("isCustomer: %b", isCustomer));
 				}
+				LOG.trace("Outside isCustomer loop");
 			}
 			// else user not logged in, loop again
 		}
+		LOG.debug(String.format("User is: %s and isRunning is: %b", user != null ? user.getClass() : null, isRunning));
 	}
 	
 	public static void displayBanner() {
+		LOG.trace("Controller.displayBanner method called");
+		
 		System.out.printf("\n=======================================\n"
 				+ "\nWelcome to MyAdoptionPlace!\n"
 				+ "\n=======================================\n\n");
 	}
 	
 	public static int displayLoginMenu() {
+		LOG.trace("Controller.displayLoginMenu method called");
+		
 		displayBanner();
 		System.out.println("1. Login\n2. Register\n3. Quit"); 
 		int choice = 0;
@@ -118,12 +135,14 @@ public class Controller {
 			String text = scanner.nextLine();
 			choice = Integer.parseInt(text);
 		}catch(Exception ex){
-			System.out.print("\nError: incorrect input!");
+			LOG.info("User entered incorrect input in DisplayLoginMenu", ex);
 		}
 		return choice;
 	}
 	
 	public static int displayEmployeeMenu() {
+		LOG.trace("Controller.displayEmployeeMenu method called");
+		
 		System.out.printf("\n=======================================\n"
 				+ "\nEmployee Menu\n"
 				+ "\n=======================================\n\n");
@@ -139,12 +158,14 @@ public class Controller {
 			String text = scanner.nextLine();
 			choice = Integer.parseInt(text);
 		}catch(Exception ex){
-			System.out.print("\nError: incorrect input!");
+			LOG.info("User entered incorrect input in DisplayEmployeeMenu", ex);
 		}
 		return choice;
 	}
 	
 	public static int displayCustomerMenu() {
+		LOG.trace("Controller.displayCustomerMenu method called");
+		
 		System.out.printf("\n=======================================\n"
 				+ "\nCustomer Menu\n"
 				+ "\n=======================================\n\n");
@@ -160,12 +181,14 @@ public class Controller {
 			String text = scanner.nextLine();
 			choice = Integer.parseInt(text);
 		}catch(Exception ex){
-			System.out.print("\nError: incorrect input!");
+			LOG.info("User entered incorrect input in DisplayCustomerMenu", ex);
 		}
 		return choice;
 	}
 	
 	public static void displayGoodbyeMessage() {
+		LOG.trace("Controller.displayGoodbyeMessage method called");
+		
 		System.out.printf("\n\n\n======================================="
 				+ "\n\n"
 				+ "Thank you for using MyAdoptionPlace!"

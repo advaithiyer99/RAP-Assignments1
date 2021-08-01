@@ -48,10 +48,10 @@ public abstract class BankAccount {
 	}
 	public void setAccountBalance(double accountBalance, double deposit, double withdraw) {
 		if (deposit > 0 && withdraw == 0) {
-			accountBalance = startingBalance + deposit;
+			this.accountBalance = startingBalance + deposit;
 			System.out.println("Your balance is " + accountBalance);
 		} else if (withdraw < accountBalance && withdraw > 0 && deposit == 0) {
-			accountBalance = startingBalance - withdraw;
+			this.accountBalance = startingBalance - withdraw;
 			System.out.println("Your balance is " + accountBalance);
 		} else {
 			System.out.println("Your balance is " + accountBalance);

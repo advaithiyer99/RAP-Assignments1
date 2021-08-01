@@ -4,19 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Properties;
-
-import com.revature.models.BankAccount;
-import com.revature.models.Checking;
-import com.revature.models.Customer;
-import com.revature.models.Employee;
-import com.revature.models.Savings;
-import com.revature.models.User;
 
 public class DAOUtility {
 	private static String CONNECTION_USERNAME;
@@ -45,7 +34,6 @@ public class DAOUtility {
 			CONNECTION_PASSWORD = System.getenv(CONNECTION_PASSWORD_VAR);
 			CONNECTION_URL = System.getenv(CONNECTION_URL_VAR);
 			
-			// shorter step 
 			CONNECTION_USERNAME = System.getenv(properties.getProperty("CONNECTION_USERNAME"));
 			CONNECTION_PASSWORD = System.getenv(properties.getProperty("CONNECTION_PASSWORD"));
 			CONNECTION_URL = System.getenv(properties.getProperty("CONNECTION_URL"));

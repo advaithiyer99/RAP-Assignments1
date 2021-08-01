@@ -34,3 +34,181 @@
 2021-07-20 12:06:10  ERROR com.revature.App:17 This is my error message.
 2021-07-20 12:06:10  FATAL com.revature.App:18 This is my fatal message.
 2021-07-20 12:06:10  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:11:03  TRACE com.revature.App:13 This is my trace message.
+2021-07-30 15:11:03  DEBUG com.revature.App:14 This is my debug message.
+2021-07-30 15:11:03  INFO com.revature.App:15 This is my info message.
+2021-07-30 15:11:03  WARN com.revature.App:16 This is my warn message.
+2021-07-30 15:11:03  ERROR com.revature.App:17 This is my error message.
+2021-07-30 15:11:03  FATAL com.revature.App:18 This is my fatal message.
+2021-07-30 15:11:03  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:11:16  TRACE com.revature.App:22 After calling Controller.init()
+2021-07-30 15:11:25  TRACE com.revature.App:13 This is my trace message.
+2021-07-30 15:11:25  DEBUG com.revature.App:14 This is my debug message.
+2021-07-30 15:11:25  INFO com.revature.App:15 This is my info message.
+2021-07-30 15:11:25  WARN com.revature.App:16 This is my warn message.
+2021-07-30 15:11:25  ERROR com.revature.App:17 This is my error message.
+2021-07-30 15:11:25  FATAL com.revature.App:18 This is my fatal message.
+2021-07-30 15:11:25  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:15:59  TRACE com.revature.App:13 This is my trace message.
+2021-07-30 15:15:59  DEBUG com.revature.App:14 This is my debug message.
+2021-07-30 15:15:59  INFO com.revature.App:15 This is my info message.
+2021-07-30 15:15:59  WARN com.revature.App:16 This is my warn message.
+2021-07-30 15:15:59  ERROR com.revature.App:17 This is my error message.
+2021-07-30 15:15:59  FATAL com.revature.App:18 This is my fatal message.
+2021-07-30 15:15:59  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:27:13  TRACE com.revature.App:13 This is my trace message.
+2021-07-30 15:27:13  DEBUG com.revature.App:14 This is my debug message.
+2021-07-30 15:27:13  INFO com.revature.App:15 This is my info message.
+2021-07-30 15:27:13  WARN com.revature.App:16 This is my warn message.
+2021-07-30 15:27:13  ERROR com.revature.App:17 This is my error message.
+2021-07-30 15:27:13  FATAL com.revature.App:18 This is my fatal message.
+2021-07-30 15:27:13  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:27:13  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-30 15:27:13  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-30 15:27:13  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-30 15:27:13  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-30 15:27:34  INFO com.revature.controllers.Controller:41 Emplyee logged in.
+2021-07-30 15:27:34  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Employee and isRunning is: true
+2021-07-30 15:27:34  TRACE com.revature.controllers.Controller:59 Inside isEmployee loop
+2021-07-30 15:27:34  TRACE com.revature.controllers.Controller:144 Controller.displayEmployeeMenu method called
+2021-07-30 15:27:39  DEBUG com.revature.controllers.Controller:81 isEmployee: true
+2021-07-30 15:27:39  TRACE com.revature.controllers.Controller:59 Inside isEmployee loop
+2021-07-30 15:27:39  TRACE com.revature.controllers.Controller:144 Controller.displayEmployeeMenu method called
+2021-07-30 15:27:45  DEBUG com.revature.controllers.Controller:81 isEmployee: false
+2021-07-30 15:27:45  TRACE com.revature.controllers.Controller:83 Outside isEmployee loop
+2021-07-30 15:27:45  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-30 15:27:45  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-30 15:27:53  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Customer and isRunning is: true
+2021-07-30 15:27:53  TRACE com.revature.controllers.Controller:89 Inside isCustomer loop
+2021-07-30 15:27:53  TRACE com.revature.controllers.Controller:167 Controller.displayCustomerMenu method called
+2021-07-30 15:30:43  TRACE com.revature.controllers.Controller:190 Controller.displayGoodbyeMessage method called
+2021-07-30 15:30:43  DEBUG com.revature.controllers.Controller:111 isCustomer: false
+2021-07-30 15:30:43  TRACE com.revature.controllers.Controller:113 Outside isCustomer loop
+2021-07-30 15:30:43  DEBUG com.revature.controllers.Controller:117 User is: class com.revature.models.Customer and isRunning is: false
+2021-07-30 15:30:43  TRACE com.revature.App:22 After calling Controller.init()
+2021-07-30 15:32:05  TRACE com.revature.App:13 This is my trace message.
+2021-07-30 15:32:05  DEBUG com.revature.App:14 This is my debug message.
+2021-07-30 15:32:05  INFO com.revature.App:15 This is my info message.
+2021-07-30 15:32:05  WARN com.revature.App:16 This is my warn message.
+2021-07-30 15:32:05  ERROR com.revature.App:17 This is my error message.
+2021-07-30 15:32:05  FATAL com.revature.App:18 This is my fatal message.
+2021-07-30 15:32:05  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-30 15:32:05  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-30 15:32:05  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-30 15:32:05  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-30 15:32:05  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 16:14:21  TRACE com.revature.App:13 This is my trace message.
+2021-07-31 16:14:21  DEBUG com.revature.App:14 This is my debug message.
+2021-07-31 16:14:21  INFO com.revature.App:15 This is my info message.
+2021-07-31 16:14:21  WARN com.revature.App:16 This is my warn message.
+2021-07-31 16:14:21  ERROR com.revature.App:17 This is my error message.
+2021-07-31 16:14:21  FATAL com.revature.App:18 This is my fatal message.
+2021-07-31 16:14:21  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-31 16:14:21  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-31 16:14:21  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-31 16:14:21  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 16:14:21  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 16:16:35  INFO com.revature.controllers.Controller:138 User entered incorrect input in DisplayLoginMenu
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.revature.controllers.Controller.displayLoginMenu(Controller.java:135) [classes/:?]
+	at com.revature.controllers.Controller.init(Controller.java:35) [classes/:?]
+	at com.revature.App.main(App.java:21) [classes/:?]
+2021-07-31 16:16:35  DEBUG com.revature.controllers.Controller:54 User is: null and isRunning is: true
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 16:16:35  INFO com.revature.controllers.Controller:138 User entered incorrect input in DisplayLoginMenu
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.revature.controllers.Controller.displayLoginMenu(Controller.java:135) [classes/:?]
+	at com.revature.controllers.Controller.init(Controller.java:35) [classes/:?]
+	at com.revature.App.main(App.java:21) [classes/:?]
+2021-07-31 16:16:35  DEBUG com.revature.controllers.Controller:54 User is: null and isRunning is: true
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 16:16:35  INFO com.revature.controllers.Controller:138 User entered incorrect input in DisplayLoginMenu
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.revature.controllers.Controller.displayLoginMenu(Controller.java:135) [classes/:?]
+	at com.revature.controllers.Controller.init(Controller.java:35) [classes/:?]
+	at com.revature.App.main(App.java:21) [classes/:?]
+2021-07-31 16:16:35  DEBUG com.revature.controllers.Controller:54 User is: null and isRunning is: true
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 16:16:35  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 16:16:35  INFO com.revature.controllers.Controller:138 User entered incorrect input in DisplayLoginMenu
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1651) ~[?:?]
+	at com.revature.controllers.Controller.displayLoginMenu(Controller.java:135) [classes/:?]
+	at com.revature.controllers.Controller.init(Controller.java:35) [classes/:?]
+	at com.revature.App.main(App.java:21) [classes/:?]
+2021-07-31 16:16:35  DEBUG com.revature.controllers.Controller:54 User is: null and isRunning is: true
+2021-07-31 17:47:21  TRACE com.revature.App:13 This is my trace message.
+2021-07-31 17:47:21  DEBUG com.revature.App:14 This is my debug message.
+2021-07-31 17:47:21  INFO com.revature.App:15 This is my info message.
+2021-07-31 17:47:21  WARN com.revature.App:16 This is my warn message.
+2021-07-31 17:47:21  ERROR com.revature.App:17 This is my error message.
+2021-07-31 17:47:21  FATAL com.revature.App:18 This is my fatal message.
+2021-07-31 17:47:21  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-31 17:47:21  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-31 17:47:21  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-31 17:47:21  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 17:47:21  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 17:47:28  INFO com.revature.controllers.Controller:41 Emplyee logged in.
+2021-07-31 17:47:28  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Employee and isRunning is: true
+2021-07-31 17:47:28  TRACE com.revature.controllers.Controller:59 Inside isEmployee loop
+2021-07-31 17:47:28  TRACE com.revature.controllers.Controller:144 Controller.displayEmployeeMenu method called
+2021-07-31 17:47:42  TRACE com.revature.controllers.Controller:190 Controller.displayGoodbyeMessage method called
+2021-07-31 17:47:42  DEBUG com.revature.controllers.Controller:81 isEmployee: false
+2021-07-31 17:47:42  TRACE com.revature.controllers.Controller:83 Outside isEmployee loop
+2021-07-31 17:47:42  DEBUG com.revature.controllers.Controller:117 User is: class com.revature.models.Employee and isRunning is: false
+2021-07-31 17:47:42  TRACE com.revature.App:22 After calling Controller.init()
+2021-07-31 17:47:48  TRACE com.revature.App:13 This is my trace message.
+2021-07-31 17:47:48  DEBUG com.revature.App:14 This is my debug message.
+2021-07-31 17:47:48  INFO com.revature.App:15 This is my info message.
+2021-07-31 17:47:48  WARN com.revature.App:16 This is my warn message.
+2021-07-31 17:47:48  ERROR com.revature.App:17 This is my error message.
+2021-07-31 17:47:48  FATAL com.revature.App:18 This is my fatal message.
+2021-07-31 17:47:48  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-31 17:47:48  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-31 17:47:48  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-31 17:47:48  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 17:47:48  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 17:48:00  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Customer and isRunning is: true
+2021-07-31 17:48:00  TRACE com.revature.controllers.Controller:89 Inside isCustomer loop
+2021-07-31 17:48:00  TRACE com.revature.controllers.Controller:167 Controller.displayCustomerMenu method called
+2021-07-31 17:51:32  DEBUG com.revature.controllers.Controller:111 isCustomer: true
+2021-07-31 17:51:32  TRACE com.revature.controllers.Controller:89 Inside isCustomer loop
+2021-07-31 17:51:32  TRACE com.revature.controllers.Controller:167 Controller.displayCustomerMenu method called
+2021-07-31 17:51:37  DEBUG com.revature.controllers.Controller:111 isCustomer: false
+2021-07-31 17:51:37  TRACE com.revature.controllers.Controller:113 Outside isCustomer loop
+2021-07-31 17:51:37  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 17:51:37  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 17:51:40  TRACE com.revature.controllers.Controller:190 Controller.displayGoodbyeMessage method called
+2021-07-31 17:51:40  DEBUG com.revature.controllers.Controller:54 User is: null and isRunning is: false
+2021-07-31 17:51:40  DEBUG com.revature.controllers.Controller:117 User is: null and isRunning is: false
+2021-07-31 17:51:40  TRACE com.revature.App:22 After calling Controller.init()
+2021-07-31 19:15:59  TRACE com.revature.App:13 This is my trace message.
+2021-07-31 19:15:59  DEBUG com.revature.App:14 This is my debug message.
+2021-07-31 19:15:59  INFO com.revature.App:15 This is my info message.
+2021-07-31 19:15:59  WARN com.revature.App:16 This is my warn message.
+2021-07-31 19:15:59  ERROR com.revature.App:17 This is my error message.
+2021-07-31 19:15:59  FATAL com.revature.App:18 This is my fatal message.
+2021-07-31 19:15:59  TRACE com.revature.App:20 Before calling Controller.init()
+2021-07-31 19:15:59  TRACE com.revature.controllers.Controller:29 Controller.init() method called.
+2021-07-31 19:15:59  DEBUG com.revature.controllers.Controller:30 User is: null and isRunning is: true
+2021-07-31 19:15:59  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 19:15:59  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 19:16:50  INFO com.revature.controllers.Controller:41 Emplyee logged in.
+2021-07-31 19:16:50  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Employee and isRunning is: true
+2021-07-31 19:16:50  TRACE com.revature.controllers.Controller:59 Inside isEmployee loop
+2021-07-31 19:16:50  TRACE com.revature.controllers.Controller:144 Controller.displayEmployeeMenu method called
+2021-07-31 19:29:43  DEBUG com.revature.controllers.Controller:81 isEmployee: false
+2021-07-31 19:29:43  TRACE com.revature.controllers.Controller:83 Outside isEmployee loop
+2021-07-31 19:29:43  TRACE com.revature.controllers.Controller:129 Controller.displayLoginMenu method called
+2021-07-31 19:29:43  TRACE com.revature.controllers.Controller:121 Controller.displayBanner method called
+2021-07-31 19:29:45  DEBUG com.revature.controllers.Controller:54 User is: class com.revature.models.Customer and isRunning is: true
+2021-07-31 19:29:45  TRACE com.revature.controllers.Controller:89 Inside isCustomer loop
+2021-07-31 19:29:45  TRACE com.revature.controllers.Controller:167 Controller.displayCustomerMenu method called
+2021-07-31 19:29:50  DEBUG com.revature.controllers.Controller:111 isCustomer: true
+2021-07-31 19:29:50  TRACE com.revature.controllers.Controller:89 Inside isCustomer loop
+2021-07-31 19:29:50  TRACE com.revature.controllers.Controller:167 Controller.displayCustomerMenu method called

@@ -155,6 +155,19 @@ public class BankUnitTesting {
 		account.getAccountStatus();
 	}
 	
+	@Test
+	public void testSetAccountBalance() {
+		System.out.println("testSetAccountBalance is running");
+		
+		Checking account = new Checking("Checking", 1212121212, "Active", 500, 0, 125.25, 125.25, 374.75);
+	
+		double resultExpected = 374.75;
+		
+		double resultRetrieved = account.getAccountBalance();
+		
+		assertEquals(resultExpected, resultRetrieved, 0.02);
+	}
+	
 	@Test 
 	public void testCheckingAccountBalance() {
 		System.out.println("testCheckingAccountBalance is running");
@@ -165,9 +178,7 @@ public class BankUnitTesting {
 		
 		double resultRetrieved = account.getAccountBalance();
 		
-		assertEquals(resultExpected, resultRetrieved, 0.00);
-		
-		System.out.println(resultRetrieved);
+		assertEquals(resultExpected, resultRetrieved, 0.02);
 	}
 	
 }
