@@ -1,8 +1,6 @@
 package BankingSimulator;
 
 import com.revature.models.User;
-import com.revature.service.UserService;
-import com.revature.service.UserServiceImpl;
 import com.revature.models.Customer;
 import com.revature.models.Employee;
 import com.revature.dao.UserDaoImpl;
@@ -28,8 +26,6 @@ public class Simulator {
 	private static BankAccountDao bankaccountDAO = new BankAccountDaoImpl();
 	
 	private static UserRepos userRepos = new UserReposImpl();
-	
-	private static UserService userService = new UserServiceImpl();
 	
 	public static Scanner scanner = new Scanner(System.in);
 	
@@ -108,7 +104,7 @@ public class Simulator {
 							System.out.println(bankaccountDAO.getAccountsofUser("user1"));
 							break;
 					case 2: // Apply for New Account
-							System.out.println(bankaccountDAO.getAccountsofUser("user1"));
+							System.out.println(userDAO.getUser("user1"));
 							System.out.println(bankaccountDAO.addAccount(null));
 							break;
 					case 3: // Make Deposit
