@@ -13,7 +13,10 @@ public class DAOUtility {
 	private static String CONNECTION_URL;
 	private static Connection connection;
 
-	static {
+	public static void init() {
+		if (CONNECTION_URL != null) {
+			return;
+		}
 		try {
 			// get reference to properties file
 			DAOUtility.class.getClassLoader();

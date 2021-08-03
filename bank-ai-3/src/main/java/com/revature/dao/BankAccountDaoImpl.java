@@ -7,7 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.revature.models.*;
+import com.revature.models.BankAccount;
+import com.revature.models.Savings;
+import com.revature.models.Checking;
 import com.revature.utils.DAOUtility;
 
 public class BankAccountDaoImpl implements BankAccountDao {
@@ -44,7 +46,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 		
 		try {
 			connection = DAOUtility.getConnection();
-			String sql = "select * from account where account_id = ?;";
+			String sql = "select * from account where account_id = ?; select * from transactions where account_id = ?;";
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, username);
 			ResultSet rs = statement.executeQuery();
@@ -54,11 +56,15 @@ public class BankAccountDaoImpl implements BankAccountDao {
 				double accountBalance = rs.getDouble("balance");
 				String accountType = rs.getString("account_type");
 				String accountStatus = rs.getString("status");
+				double startingBalance = rs.getDouble("starting_balance");
+				double deposit = rs.getDouble("deposit");
+				double withdraw = rs.getDouble("withdrawn");
+				double transaction = rs.getDouble("transaction");
 	
 				if (accountType.equals("Checking")) {
-					account = new Checking(accountNumber, accountBalance, accountStatus);
+					account = new Checking(accountType, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance);
 				} else {
-					account = new Savings(accountNumber, accountBalance, accountStatus);
+					account = new Savings(accountStatus, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance);
 				}
 			}
 			
@@ -78,7 +84,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 		
 		try {
 			connection = DAOUtility.getConnection();
-			String sql = "select * from account;";
+			String sql = "select * from account; select * from transactions";
 			statement = connection.prepareStatement(sql);
 		
 			ResultSet rs = statement.executeQuery();
@@ -88,11 +94,15 @@ public class BankAccountDaoImpl implements BankAccountDao {
 				double accountBalance = rs.getDouble("balance");
 				String accountType = rs.getString("account_type");
 				String accountStatus = rs.getString("status");
+				double startingBalance = rs.getDouble("starting_balance");
+				double deposit = rs.getDouble("deposit");
+				double withdraw = rs.getDouble("withdrawn");
+				double transaction = rs.getDouble("transaction");
 				
 				if (accountType.equals("Checking")) {
-					accounts.add(new Checking(accountNumber, accountBalance, accountStatus));
+					accounts.add(new Checking(accountType, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance));
 				} else {
-					accounts.add(new Savings(accountNumber, accountBalance, accountStatus));
+					accounts.add(new Savings(accountType, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance));
 				}
 			}
 			
@@ -111,8 +121,9 @@ public class BankAccountDaoImpl implements BankAccountDao {
 		BankAccount account = null;
 		
 		try {
+			DAOUtility.init();
 			connection = DAOUtility.getConnection();
-			String sql = "select * from animals where username = ?;";
+			String sql = "select * from account where username = ?; select * from transactions where username = ?;";
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, username);
 			ResultSet rs = statement.executeQuery();
@@ -122,11 +133,15 @@ public class BankAccountDaoImpl implements BankAccountDao {
 				double accountBalance = rs.getDouble("balance");
 				String accountType = rs.getString("account_type");
 				String accountStatus = rs.getString("status");
+				double startingBalance = rs.getDouble("starting_balance");
+				double deposit = rs.getDouble("deposit");
+				double withdraw = rs.getDouble("withdrawn");
+				double transaction = rs.getDouble("transaction");
 				
 				if (accountType.equals("Checking")) {
-					account = new Checking(accountNumber, accountBalance, accountStatus);
+					account = new Checking(accountType, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance);
 				} else {
-					account = new Savings(accountNumber, accountBalance, accountStatus);
+					account = new Savings(accountType, accountNumber, accountStatus, startingBalance, deposit, withdraw, transaction, accountBalance);
 				}
 			}
 			
@@ -150,7 +165,25 @@ public class BankAccountDaoImpl implements BankAccountDao {
 			statement.setString(2, text);
 			return statement.executeUpdate() != 0;
 		} catch(SQLException ex) {
-			System.out.println("Error: Failed to obtain requested account.");
+			System.out.println("Error: Failed to update account info.");
+			ex.printStackTrace();
+			return false;
+		} finally {
+			closeResources();
+		}
+	}
+	
+	@Override
+	public boolean updateAccountInfo(String text, double accountBalance) {
+		try {
+			connection = DAOUtility.getConnection();
+			String sql = "update account set balance = ? where username = ?;";
+			statement = connection.prepareStatement(sql);
+			statement.setDouble(1, accountBalance);
+			statement.setString(2, text);
+			return statement.executeUpdate() != 0;
+		} catch(SQLException ex) {
+			System.out.println("Error: Failed to update account info.");
 			ex.printStackTrace();
 			return false;
 		} finally {
@@ -167,14 +200,14 @@ public class BankAccountDaoImpl implements BankAccountDao {
 			statement.setString(1, text);
 			return statement.executeUpdate() != 0;
 		} catch(SQLException ex) {
-			System.out.println("Error: Failed to obtain requested account.");
+			System.out.println("Error: Failed to remove requested account.");
 			ex.printStackTrace();
 			return false;
 		} finally {
 			closeResources();
 		}
 	}
-	
+
 	public void closeResources() {
 		try {
 			if (connection != null && !connection.isClosed()) {

@@ -61,15 +61,17 @@ public class Simulator {
 					
 					switch(option2) {
 					case 1: // View customer balance
-							System.out.println(bankaccountDAO.getAccountsofUser("user1").getAccountBalance());
+							System.out.println(bankaccountDAO.getAccount("user1").getAccountBalance());
 							break;
 					case 2: // Approve account
 							System.out.println(userRepos.getUser("user1"));
 							System.out.println(bankaccountDAO.addAccount(null));
+							System.out.println("Account approved!");
 							break;
 					case 3: // Reject Account
 							System.out.println(userRepos.getUser("user1"));
 							System.out.println(bankaccountDAO.removeAccount(null));
+							System.out.println("Account rejected!");
 							break;
 					case 4: // View transaction log
 							System.out.println(); 

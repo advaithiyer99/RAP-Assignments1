@@ -11,17 +11,21 @@ create table customer (
 );
 
 create table account (
-	username varchar primary key not null references customer(username),
-	account_id int not null,
-	balance real not null,
+	username varchar unique references customer(username) on delete cascade,
+	account_id serial primary key not null unique,
+	balance numeric(8, 2) not null default 0,
 	account_type varchar not null,
 	status varchar not null
 );
 
 create table transactions (
-	username varchar primary key not null references account(username),
-	deposit int,
-	withdrawn int
+	username varchar references account(username) on delete cascade,
+	deposit int default 0,
+	withdrawn int default 0,
+	transaction_id serial primary key not null,
+	account_id serial references account(account_id) on delete cascade,
+	starting_balance numeric(8, 2) default 0,
+	balance numeric(8, 2) default 0
 );
 
 select * from customer;

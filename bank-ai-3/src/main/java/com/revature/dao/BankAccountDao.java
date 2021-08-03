@@ -16,5 +16,7 @@ public interface BankAccountDao {
 	
 	public boolean updateAccountInfo(String text, String value);
 	
+	public boolean updateAccountInfo(String text, double accountBalance);
+	
 	public boolean removeAccount(String text);
 }

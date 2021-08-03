@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 
 
+
 public class Bank {
 	
 	private static final Logger LOG = LogManager.getLogger(Simulator.class);
