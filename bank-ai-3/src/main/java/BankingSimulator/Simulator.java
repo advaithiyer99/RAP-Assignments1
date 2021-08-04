@@ -1,14 +1,14 @@
 package BankingSimulator;
 
 import com.revature.models.User;
+import com.revature.models.BankAccount;
+import com.revature.models.Checking;
 import com.revature.models.Customer;
 import com.revature.models.Employee;
 import com.revature.dao.UserDaoImpl;
 import com.revature.dao.UserDao;
 import com.revature.dao.BankAccountDao;
 import com.revature.dao.BankAccountDaoImpl;
-import com.revature.dao.UserRepos;
-import com.revature.dao.UserReposImpl;
 
 import java.util.Scanner;
 
@@ -25,8 +25,6 @@ public class Simulator {
 	
 	private static BankAccountDao bankaccountDAO = new BankAccountDaoImpl();
 	
-	private static UserRepos userRepos = new UserReposImpl();
-	
 	public static Scanner scanner = new Scanner(System.in);
 	
 	public static boolean appIsRunning = true; 
@@ -34,13 +32,14 @@ public class Simulator {
 	public static void run() {
 		
 		LOG.trace("Simulator.run() method is now running.");
+		LOG.debug(String.format("User is: %s and appIsRunning is: %b", user != null ? user.getClass() : null, appIsRunning));
 		
 		while (appIsRunning) {
 			
 			int option1 = loginScreen();
 			
 			switch (option1) {
-			case 1: user = new Employee("user1", "2222");
+			case 1: user = new Employee("user1", "1111");
 					LOG.info("Employee has logged in");
 					break;
 			case 2: user = new Customer("user1", "1111", "Joe Smith");
@@ -53,6 +52,7 @@ public class Simulator {
 					break;
 			}
 			
+			LOG.debug(String.format("User is: %s and appIsRunning is: %b", user != null ? user.getClass() : null, appIsRunning));
 			if (user != null && user instanceof Employee) {
 				boolean isEmployee = true;
 				while (isEmployee) {
@@ -61,26 +61,27 @@ public class Simulator {
 					
 					switch(option2) {
 					case 1: // View customer balance
-							System.out.println(bankaccountDAO.getAccount("user1").getAccountBalance());
+							System.out.println(bankaccountDAO.getAllAccounts());
+							LOG.info("Account names not converted to String in order to preserve confidentiality");
 							break;
 					case 2: // Approve account
-							System.out.println(userRepos.getUser("user1"));
-							System.out.println(bankaccountDAO.addAccount(null));
-							System.out.println("Account approved!");
+							bankaccountDAO.getAccount(user.getUsername());
+							System.out.println("Account approved for: " + userDAO.getUser(user.getUsername()) + "!");
 							break;
 					case 3: // Reject Account
-							System.out.println(userRepos.getUser("user1"));
-							System.out.println(bankaccountDAO.removeAccount(null));
+							bankaccountDAO.getAccount(user.getUsername());
+							bankaccountDAO.removeAccount(user.getUsername());
 							System.out.println("Account rejected!");
 							break;
 					case 4: // View transaction log
-							System.out.println(); 
+							System.out.println(bankaccountDAO.getAccount(user.getUsername()).getDeposit()); 
+							System.out.println(bankaccountDAO.getAccount(user.getUsername()).getWithdraw()); 
 							break;
 					case 5: // Log Out
 							user = null;
 							isEmployee = false;
 							break;
-					case 6: // Quit
+					case 6: // Quit Application
 							isEmployee = false;
 							appIsRunning = false;
 							displayGoodbyeScreen();
@@ -88,6 +89,8 @@ public class Simulator {
 					default: System.out.println("Input invalid. Please enter a number between 1 and 6.");
 							break;
 					}
+					
+					LOG.debug(String.format("isEmployee: %b", isEmployee));
 					
 				}
 				
@@ -103,28 +106,39 @@ public class Simulator {
 					
 					switch(option2) {
 					case 1: // View Accounts
-							System.out.println(bankaccountDAO.getAccountsofUser("user1"));
+							BankAccount account = bankaccountDAO.getAccount(user.getUsername());
+							System.out.println(account);
 							break;
 					case 2: // Apply for New Account
-							System.out.println(userDAO.getUser("user1"));
-							System.out.println(bankaccountDAO.addAccount(null));
+							System.out.println(bankaccountDAO.addAccount(new Checking(1212112323, 100.00, "Inactive", "Checking")));
+							LOG.warn("First parameter needs to be changed after each run due to unique constraint account_id");
 							break;
 					case 3: // Make Deposit
-							bankaccountDAO.getAccount("user1").setDeposit(100.20);
-							bankaccountDAO.getAccount("user1").getDeposit();
+							BankAccount accountDeposit = bankaccountDAO.getAccount(user.getUsername());
+							double startingBalanceD = accountDeposit.getStartingBalance();
+							System.out.println(bankaccountDAO.makeDeposit(user.getUsername(), startingBalanceD, 10.00, startingBalanceD + 10.00));
+							LOG.info("Enter custom value into third parameter if you want a value other than 10.00");
+							LOG.info("The double value in the third parameter should be the same as the double value in the fourth");
 							break;
 					case 4: // Make Withdrawal
-							bankaccountDAO.getAccount("user1").setWithdraw(200.20);
-							bankaccountDAO.getAccount("user1").getWithdraw();
+							BankAccount accountWithdraw = bankaccountDAO.getAccount(user.getUsername());
+							double startingBalanceW = accountWithdraw.getStartingBalance();
+							System.out.println(bankaccountDAO.makeWithdrawal(user.getUsername(), startingBalanceW, 10.00, startingBalanceW - 10.00));
+							LOG.info("Enter custom value into third parameter if you want a value other than 10.00");
+							LOG.info("The double value in the third parameter should be the same as the double value in the fourth");
 							break;
 					case 5: // Transfer Money
-							System.out.println(bankaccountDAO.getAccountsofUser("user1"));;
+							double accountbalance1 = bankaccountDAO.getAccount(user.getUsername()).getAccountBalance() + bankaccountDAO.getAccount(user.getUsername()).getDeposit();
+							double accountbalance2 = bankaccountDAO.getAccount("user3").getAccountBalance() - bankaccountDAO.getAccount(user.getUsername()).getDeposit();
+							System.out.println(accountbalance1);
+							System.out.println(accountbalance2);
+							LOG.info("Enter any other available account if you wish in the getAccount parameter");
 							break;
 					case 6: // Log Out
 							user = null;
 							isCustomer = false;
 							break;
-					case 7: // Quit 
+					case 7: // Quit Application
 							isCustomer = false;
 							appIsRunning = false;
 							displayGoodbyeScreen();
@@ -133,11 +147,13 @@ public class Simulator {
 							break;
 					}
 			
+					LOG.debug(String.format("isCustomer: %b", isCustomer));
+					
 				}
 				LOG.trace("isCustomer loop has finished");
 			}
 		}
-			
+		LOG.debug(String.format("User is: %s and appIsRunning is: %b", user != null ? user.getClass() : null, appIsRunning));	
 	}
 	
 	public static void homeScreen() {
@@ -176,7 +192,7 @@ public class Simulator {
 				+ "\nEmployee Menu\n"
 				+ "\n------------------------------------\n\n");
 		
-		System.out.printf("1. View customer account balances\n"
+		System.out.printf("1. View customer accounts\n"
 				+ "2. Approve Account\n" 
 				+ "3. Reject Account\n" 
 				+ "4. View Transaction Log\n"

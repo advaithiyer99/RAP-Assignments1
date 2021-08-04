@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.revature.models.*;
+import com.revature.models.User;
+import com.revature.models.Customer;
+import com.revature.models.Employee;
 import com.revature.utils.DAOUtility;
 
 public class UserDaoImpl implements UserDao {

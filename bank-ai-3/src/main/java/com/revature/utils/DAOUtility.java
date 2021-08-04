@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DAOUtility {
-	private static String CONNECTION_USERNAME;
-	private static String CONNECTION_PASSWORD;
-	private static String CONNECTION_URL;
-	private static Connection connection;
+	public static String CONNECTION_USERNAME = "postgres";
+	public static String CONNECTION_PASSWORD = "Westlake2017";
+	public static String CONNECTION_URL = "jdbc:postgresql://localhost:5432/postgres";
+	public static Connection connection;
 
 	public static void init() {
 		if (CONNECTION_URL != null) {

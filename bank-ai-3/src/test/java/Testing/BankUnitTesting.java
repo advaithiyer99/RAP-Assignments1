@@ -131,7 +131,7 @@ public class BankUnitTesting {
 	public void testCheckingAccountNumber () {
 		System.out.println("testCheckingAccountNumber is running");
 		
-		when(bankaccountDAO.getAccount(anyString())).thenReturn(new Checking(1234567898, 1500, "Active"));
+		when(bankaccountDAO.getAccount(anyString())).thenReturn(new Checking(1234567898, 1500, "Active", "Checking"));
 		
 		BankAccount account = (BankAccount) bankaccountDAO.getAccount("somebody");
 		
@@ -146,7 +146,7 @@ public class BankUnitTesting {
 	public void testSavingsAccountStatus() {
 		System.out.println("testSavingsAccountStatus is running");
 		
-		when(bankaccountDAO.getAccount(anyString())).thenReturn(new Savings(1234567898, 1500, "Active"));
+		when(bankaccountDAO.getAccount(anyString())).thenReturn(new Savings(1234567898, 1500, "Active", "Savings"));
 
 		BankAccount account = (BankAccount) bankaccountDAO.getAccount("somebody");
 

@@ -20,8 +20,8 @@ create table account (
 
 create table transactions (
 	username varchar references account(username) on delete cascade,
-	deposit int default 0,
-	withdrawn int default 0,
+	deposit numeric(8, 2) default 0,
+	withdrawn numeric(8, 2) default 0,
 	transaction_id serial primary key not null,
 	account_id serial references account(account_id) on delete cascade,
 	starting_balance numeric(8, 2) default 0,

@@ -13,10 +13,11 @@ public class Savings extends BankAccount {
 		this.setAccountBalance(accountBalance, deposit, withdraw);
 	}
 
-	public Savings(int accountNumber, double accountBalance, String accountStatus) {
+	public Savings(int accountNumber, double accountBalance, String accountStatus, String accountType) {
 		this.setAccountNumber(accountNumber);
 		this.setAccountBalance(accountBalance, deposit, withdraw);
 		this.setAccountStatus(accountStatus);
+		this.setAccountType(accountType);
 	}
 
 	@Override

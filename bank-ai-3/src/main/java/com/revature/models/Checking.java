@@ -13,10 +13,11 @@ public class Checking extends BankAccount {
 		this.setAccountBalance(accountBalance, deposit, withdraw);
 	}
 
-	public Checking(int accountNumber, double accountBalance, String accountStatus) {
+	public Checking(int accountNumber, double accountBalance, String accountStatus, String accountType) {
 		this.setAccountNumber(accountNumber);
 		this.setAccountBalance(accountBalance, deposit, withdraw);
 		this.setAccountStatus(accountStatus);
+		this.setAccountType(accountType);
 	}
 
 	@Override

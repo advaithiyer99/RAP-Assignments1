@@ -12,7 +12,9 @@ public interface BankAccountDao {
 	
 	public List<BankAccount> getAllAccounts();
 	
-	public BankAccount getAccountsofUser(String username);
+	public boolean makeDeposit(String username, double startingBalance, double deposit, double accountBalance);
+	
+	public boolean makeWithdrawal(String username, double startingBalance, double deposit, double accountBalance);
 	
 	public boolean updateAccountInfo(String text, String value);
 	
